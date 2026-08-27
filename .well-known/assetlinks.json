@@ -11,5 +11,18 @@
         "E6:E2:B2:6B:6C:AD:20:BF:41:08:E9:D3:9E:A3:94:15:0B:26:D2:3E:AB:2B:95:8E:25:1D:FF:AE:F3:86:69:9F"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pixellab.shologuti.offline.bead16.damro",
+      "sha256_cert_fingerprints": [
+        "DD:56:63:40:59:79:20:79:DD:1F:E6:A6:3A:4B:14:31:BD:28:F1:92:5E:10:58:9B:D3:82:80:F5:26:4E:89:04"
+      ]
+    }
   }
 ]
