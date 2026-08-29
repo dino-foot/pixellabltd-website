@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join the room — 16 Guti Game</title>
+    <meta name="description" content="You have been invited to a private 16 Guti match. Open the room in the app, or install it from Google Play." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#121110" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PixelLab Ltd." />
+    <meta property="og:title" content="Come play 16 Guti with me" />
+    <meta property="og:description" content="Tap to join my private room in the 16 Guti Game." />
+    <meta property="og:image" content="https://pixellabltd.com/logo.png" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --bg: #121110;
+        --surface: #1b1918;
+        --border: #2c2926;
+        --text: #f4f1ee;
+        --text-secondary: #a29a93;
+        --accent: #ff5b52;
+        --accent-tint: #ff9b8f;
+        --accent-soft: #3a1f1c;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body { height: 100%; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 20px;
+        text-align: center;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(60% 45% at 50% 0%, rgba(255, 91, 82, 0.16), transparent 70%);
+        pointer-events: none;
+      }
+
+      main {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+      }
+
+      .logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 20px;
+        margin: 0 auto 20px;
+        display: block;
+        border: 1px solid var(--border);
+      }
+
+      h1 {
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 1.25;
+        margin: 0 0 8px;
+        letter-spacing: -0.02em;
+      }
+
+      .sub {
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text-secondary);
+        margin: 0 0 26px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 22px 20px;
+        margin-bottom: 22px;
+      }
+
+      .label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        margin: 0 0 10px;
+      }
+
+      .code {
+        font-size: 40px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        line-height: 1;
+        color: var(--accent-tint);
+        margin: 0 0 4px;
+        text-indent: 0.16em;
+      }
+
+      .fee {
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin: 12px 0 0;
+      }
+
+      .fee strong { color: var(--text); font-weight: 700; }
+
+      .copy {
+        margin-top: 16px;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 9px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+
+      .copy:hover { color: var(--text); border-color: var(--text-secondary); }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 14px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        margin-bottom: 12px;
+        transition: filter 0.15s ease, border-color 0.15s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #ffffff;
+      }
+
+      .btn-primary:hover { filter: brightness(1.08); }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--text);
+        border-color: var(--border);
+      }
+
+      .btn-secondary:hover { border-color: var(--text-secondary); }
+
+      .hint {
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        margin: 18px 0 0;
+      }
+
+      .footer {
+        margin-top: 32px;
+        font-size: 12px;
+        color: var(--text-secondary);
+        opacity: 0.75;
+      }
+
+      .footer a { color: inherit; }
+
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <img class="logo" src="/logo.png" alt="16 Guti Game" />
+
+      <h1 id="heading">You're invited to a match</h1>
+      <p class="sub" id="subheading">Open the room in the 16 Guti Game to join.</p>
+
+      <div class="card" id="room-card" hidden>
+        <p class="label">Room code</p>
+        <p class="code" id="room-code">—</p>
+        <p class="fee" id="entry-fee" hidden>Entry fee: <strong id="entry-fee-value"></strong></p>
+        <button class="copy" id="copy-btn" type="button">Copy code</button>
+      </div>
+
+      <a class="btn btn-primary" id="open-btn" href="#">Open in the app</a>
+      <a
+        class="btn btn-secondary"
+        id="store-btn"
+        href="https://play.google.com/store/apps/details?id=com.pixellab.bead.online.board.game"
+        >Get it on Google Play</a
+      >
+
+      <p class="hint" id="hint">
+        Already have the game? Open it, then go to <strong>Friends → Join Room</strong> and enter the
+        code above.
+      </p>
+
+      <p class="footer">
+        <a href="/">PixelLab Ltd.</a>
+      </p>
+    </main>
+
+    <script>
+      (function () {
+        var PACKAGE = "com.pixellab.bead.online.board.game";
+        var STORE_URL =
+          "https://play.google.com/store/apps/details?id=" + PACKAGE + "&referrer=" +
+          encodeURIComponent("utm_source=invite_link");
+
+        var params = new URLSearchParams(window.location.search);
+        var roomCode = (params.get("roomCode") || "").trim();
+        var entryFee = (params.get("entryFee") || "").trim();
+
+        var openBtn = document.getElementById("open-btn");
+        var storeBtn = document.getElementById("store-btn");
+
+        storeBtn.href = STORE_URL;
+
+        // Build the intent:// URI. The data URI it carries is the same https link the
+        // app's manifest intent-filter matches, so Unity still receives it through
+        // Application.absoluteURL. browser_fallback_url sends anyone without the app
+        // straight to the Play Store listing.
+        function intentUri() {
+          var target = "pixellabltd.com/invite?roomCode=" + encodeURIComponent(roomCode);
+          if (entryFee) target += "&entryFee=" + encodeURIComponent(entryFee);
+          return (
+            "intent://" +
+            target +
+            "#Intent;scheme=https;package=" +
+            PACKAGE +
+            ";S.browser_fallback_url=" +
+            encodeURIComponent(STORE_URL) +
+            ";end"
+          );
+        }
+
+        // No room code in the URL: this is a bare /invite hit, so drop the room UI
+        // and just point at the store.
+        if (!roomCode) {
+          document.getElementById("heading").textContent = "16 Guti Game";
+          document.getElementById("subheading").textContent =
+            "This invite link is missing a room code. Ask your friend to share it again.";
+          document.getElementById("hint").hidden = true;
+          openBtn.hidden = true;
+          storeBtn.className = "btn btn-primary";
+          return;
+        }
+
+        document.getElementById("room-card").hidden = false;
+        document.getElementById("room-code").textContent = roomCode;
+
+        var fee = parseInt(entryFee, 10);
+        if (!isNaN(fee) && fee > 0) {
+          document.getElementById("entry-fee-value").textContent =
+            fee.toLocaleString("en-US") + " coins";
+          document.getElementById("entry-fee").hidden = false;
+        }
+
+        var isAndroid = /android/i.test(navigator.userAgent);
+
+        if (isAndroid) {
+          openBtn.href = intentUri();
+          // Try to hand off immediately. If the app is installed this page is only
+          // ever reached from an in-app browser that swallowed the App Link, so the
+          // automatic attempt is what makes those cases work.
+          window.setTimeout(function () {
+            window.location.href = intentUri();
+          }, 400);
+        } else {
+          // iOS / desktop: there is no build to open, so the store link is the action.
+          openBtn.hidden = true;
+          storeBtn.className = "btn btn-primary";
+          document.getElementById("subheading").textContent =
+            "The 16 Guti Game is available on Android. Open this link on your Android phone to join the room.";
+        }
+
+        document.getElementById("copy-btn").addEventListener("click", function () {
+          var btn = this;
+          var done = function () {
+            btn.textContent = "Copied";
+            window.setTimeout(function () {
+              btn.textContent = "Copy code";
+            }, 1600);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(roomCode).then(done, function () {});
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
