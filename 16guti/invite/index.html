@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Join the room — 16 Guti Game</title>
+    <title>Join the room — 16 Guti: Sholo Guti Pro</title>
     <meta name="description" content="You have been invited to a private 16 Guti match. Open the room in the app, or install it from Google Play." />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#121110" />
@@ -11,8 +11,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PixelLab Ltd." />
     <meta property="og:title" content="Come play 16 Guti with me" />
-    <meta property="og:description" content="Tap to join my private room in 16 Guti Game." />
-    <meta property="og:image" content="https://pixellabltd.com/assets/img/16guti-icon.png" />
+    <meta property="og:description" content="Tap to join my private room in 16 Guti: Sholo Guti Pro." />
+    <meta property="og:image" content="https://pixellabltd.com/assets/img/shologuti-pro-icon.png" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -192,10 +192,10 @@
 
   <body>
     <main>
-      <img class="logo" src="/assets/img/16guti-icon.png" alt="16 Guti Game" />
+      <img class="logo" src="/assets/img/shologuti-pro-icon.png" alt="16 Guti: Sholo Guti Pro" />
 
       <h1 id="heading">You're invited to a match</h1>
-      <p class="sub" id="subheading">Open the room in 16 Guti Game to join.</p>
+      <p class="sub" id="subheading">Open the room in 16 Guti: Sholo Guti Pro to join.</p>
 
       <div class="card" id="room-card" hidden>
         <p class="label">Room code</p>
@@ -208,7 +208,7 @@
       <a
         class="btn btn-secondary"
         id="store-btn"
-        href="https://play.google.com/store/apps/details?id=com.pixellab.bead.online.board.game"
+        href="https://play.google.com/store/apps/details?id=com.pixellab.shologuti.offline.bead16.damro"
         >Get it on Google Play</a
       >
 
@@ -224,7 +224,7 @@
 
     <script>
       (function () {
-        var PACKAGE = "com.pixellab.bead.online.board.game";
+        var PACKAGE = "com.pixellab.shologuti.offline.bead16.damro";
         var STORE_URL =
           "https://play.google.com/store/apps/details?id=" + PACKAGE + "&referrer=" +
           encodeURIComponent("utm_source=invite_link");
@@ -243,7 +243,7 @@
         // Application.absoluteURL. browser_fallback_url sends anyone without the app
         // straight to the Play Store listing.
         function intentUri() {
-          var target = "pixellabltd.com/invite?roomCode=" + encodeURIComponent(roomCode);
+          var target = "pixellabltd.com/16guti/invite?roomCode=" + encodeURIComponent(roomCode);
           if (entryFee) target += "&entryFee=" + encodeURIComponent(entryFee);
           return (
             "intent://" +
@@ -256,10 +256,10 @@
           );
         }
 
-        // No room code in the URL: this is a bare /invite hit, so drop the room UI
-        // and just point at the store.
+        // No room code in the URL: this is a bare /16guti/invite hit, so drop the
+        // room UI and just point at the store.
         if (!roomCode) {
-          document.getElementById("heading").textContent = "16 Guti Game";
+          document.getElementById("heading").textContent = "16 Guti: Sholo Guti Pro";
           document.getElementById("subheading").textContent =
             "This invite link is missing a room code. Ask your friend to share it again.";
           document.getElementById("hint").hidden = true;
@@ -293,7 +293,7 @@
           openBtn.hidden = true;
           storeBtn.className = "btn btn-primary";
           document.getElementById("subheading").textContent =
-            "16 Guti Game is available on Android. Open this link on your Android phone to join the room.";
+            "16 Guti: Sholo Guti Pro is available on Android. Open this link on your Android phone to join the room.";
         }
 
         document.getElementById("copy-btn").addEventListener("click", function () {
